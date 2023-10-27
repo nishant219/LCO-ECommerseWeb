@@ -1,0 +1,63 @@
+npm init
+download npm i required dependencies
+mkdir folders
+touch app.js index.js
+npm i -D nodemon (dev dependency)  (npm run dev)
+
+setup basic server in app.js
+we are dealing with index.js for our app mainly
+
+for swagger doc create swagger.yaml file and nodemon.json
+
+
+
+--->
+
+https://medium.com/codechef-vit/a-better-project-structure-with-express-and-node-js-c23abc2d736f
+
+(methods/functionalities in controller)->
+(define route in routers and import methods here from controller)
+(import those routes in app.js)
+
+
+--->
+
+create schema
+write functionality in controller
+create route in routes while importing controller
+import that route in app.js
+
+--->
+
+what happens when someone hit route in routes-->
+those methods we bring from respective controller
+
+
+===>
+app.use('/api/v1', home)
+when you go to /api/v1 then home will take care of that route
+
+
+==>
+first work on user schema
+
+
+===> 
+cookies still there until expirary time so we have to delete them manually
+#logout 
+its frontend developers responsibility to delete those cookies from local state
+
+
+--->
+when someone visit /forgotPassword he will pass email in json 
+then we will send email on that mail id
+
+---> 
+after user requesting forgot password we are sending forgot password email with link
+then reset password controller will actually going to reset it
+
+--->
+use nodemailer for mailing service
+use mailtrap for endpoints
+Mailtrap- email delivery platform 
+
