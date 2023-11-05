@@ -5,6 +5,18 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 
+const googlePassportConfig=require("./passport/googlePassport");
+const passport = require("passport");
+const cookieSession = require("cookie-session");
+
+app.use(cookieSession({
+    maxAge:24*60*60*1000,
+    keys:[process.env.COOKIE_KEY]
+}))
+
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //for swagger documentation
 const swaggerUi = require("swagger-ui-express");

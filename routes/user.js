@@ -1,7 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const { isLoggedIn, customRole } = require("../middlewares/user");
+const passport=require("passport");
 
+router.get("/google",
+  passport.authenticate("google",{scope:[], failureRedirect: "/login" }),
+  (req,res)=>{
+    res.send("login with google");
+  }
+)
+
+router.get("/google/callback", passport.authenticate('google'),    
+(req,res)=>{
+    res.send(req.user);
+})
 
 const {
   signup,

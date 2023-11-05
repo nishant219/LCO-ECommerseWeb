@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
     validate: [validator.isEmail, "Please enter email in correct format"],
     unique: true,
   },
+  googleId:{
+    type:String,
+    min:6,
+    max:255
+},
   password: {
     type: String,
     required: [true, "please provide a password"],
